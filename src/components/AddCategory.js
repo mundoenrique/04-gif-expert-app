@@ -1,19 +1,31 @@
 import { useState } from "react"
 
-export default function AddCategory() {
-	const [inputValue, setInputValue] = useState('Hola doctor');
+export default function AddCategory({ setCategories }) {
+	const [inputValue, setInputValue] = useState('');
 
 	const handleInputChange = (e) => {
 		setInputValue(e.target.value);
 	}
 
+	const handleSubmit = (e) => {
+		e.preventDefault();
+
+		if (inputValue.trim().length > 2) {
+			setCategories(cats => [inputValue, ...cats]);
+		}
+
+		setInputValue('');
+	}
+
 	return (
 		<>
-			<input
-				type="text"
-				value={inputValue}
-				onChange={handleInputChange}
-			/>
+			<form onSubmit={handleSubmit}>
+				<input
+					type="text"
+					value={inputValue}
+					onChange={handleInputChange}
+				/>
+			</form>
 		</>
 	)
 }
