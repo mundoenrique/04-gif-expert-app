@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState } from 'react';
+
+import AddCategory from './components/AddCategory';
 
 function App() {
 	const [categories, setCategories] = useState(['One Punch', 'Samurai x', 'Dragon Ball']);
@@ -13,6 +15,7 @@ function App() {
 	return (
 		<>
 			<h2>GifExpertApp</h2>
+			<AddCategory />
 			<hr />
 			<button onClick={handleAddCat}>Agregar</button>
 			<ol>
