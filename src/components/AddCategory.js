@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState } from "react"
 
 export default function AddCategory({ setCategories }) {
@@ -30,3 +31,6 @@ export default function AddCategory({ setCategories }) {
 	)
 }
 
+AddCategory.propType = {
+	setCategories: PropTypes.func.isRequired
+}
