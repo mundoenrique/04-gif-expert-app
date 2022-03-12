@@ -31,6 +31,6 @@ export default function AddCategory({ setCategories }) {
 	)
 }
 
-AddCategory.propType = {
+AddCategory.propTypes = {
 	setCategories: PropTypes.func.isRequired
 }
