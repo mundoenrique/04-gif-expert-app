@@ -13,6 +13,4 @@ describe('Pruebas al helper toolhelper', () => {
 
 		expect(gifs.length).toBe(0);
 	});
-
-
 });
