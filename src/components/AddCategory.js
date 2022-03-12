@@ -13,9 +13,8 @@ export default function AddCategory({ setCategories }) {
 
 		if (inputValue.trim().length > 2) {
 			setCategories(cats => [inputValue, ...cats]);
+			setInputValue('');
 		}
-
-		setInputValue('');
 	}
 
 	return (
