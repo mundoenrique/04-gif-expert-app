@@ -32,4 +32,29 @@ describe('Pruebas al componene <GifGrid />', () => {
 
 		expect(wrapper).toMatchSnapshot();
 	});
+
+	test('Debe mostrar los items cuando se llama al useFetchGifs', () => {
+		const gifs = [
+			{
+				id: 'Abecd',
+				url: 'https://localhost/image/img.jpg',
+				title: 'Un título'
+			},
+			{
+				id: 'Agfdgf',
+				url: 'https://localhost/image/img.jpg',
+				title: 'Un título'
+			}
+		];
+
+		useFetchGifs.mockReturnValue({
+			data: gifs,
+			loading: false
+		});
+
+		const wrapper = shallow(<GifGrid category={category} />);
+
+		expect(wrapper.find('p').exists()).toBe(false);
+		expect(wrapper.find('GifGridItem').length).toBe(gifs.length);
+	});
 });
